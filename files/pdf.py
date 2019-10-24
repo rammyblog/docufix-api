@@ -1,19 +1,16 @@
 import PyPDF2
-
-# def getPdfText(filename)
-#     pdfFileObj = open(filenam, 'rb')
-#     pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-#     pageNumber = pdfReader.numPages
-#     for m in range(pageNumber)
-#         pageObj = pdfReader.getPage(m)
-#     pageObj.extractText()
+import os
+from django.conf import settings # correct way
+import textract
 
 
 # This function will extract and return the pdf file text content.
 def getPdfText(filename):
+    base_dir = settings.BASE_DIR
+    dataform = filename
 
     # Open the pdf file in read binary mode.
-    fileObject = open('.'+filename, 'rb')
+    fileObject = open(dataform, 'rb')
 
     # Create a pdf reader .
     pdfFileReader = PyPDF2.PdfFileReader(fileObject)
@@ -41,6 +38,6 @@ def getPdfText(filename):
 
     if(text == ''):
         # If can not extract text then use ocr lib to extract the scanned pdf file.
-        text = textract.process(filePath, method='tesseract', encoding='utf-8')
+        text = textract.process(dataform, encoding='utf-8')
        
     return text
