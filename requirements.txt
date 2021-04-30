@@ -30,6 +30,6 @@ SpeechRecognition==3.8.1
 sqlparse==0.3.0
 textract==1.6.3
 tzlocal==1.5.1
-urllib3==1.25.6
+urllib3==1.25.8
 xlrd==1.2.0
 XlsxWriter==1.2.2
