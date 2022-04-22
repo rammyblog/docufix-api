@@ -17,7 +17,7 @@ olefile==0.46
 pdfminer.six==20181108
 Pillow==6.2.0
 pycryptodome==3.9.0
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-docx==0.8.10
 python-pptx==0.6.18
 pytz==2019.3
